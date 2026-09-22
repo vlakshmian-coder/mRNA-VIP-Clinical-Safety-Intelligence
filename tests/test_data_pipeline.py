@@ -4,6 +4,7 @@ from src.data_pipeline import load_and_validate,clean_data,MissingColumnError
 ROOT=Path(__file__).resolve().parents[1]
 def test_columns(): assert len(load_and_validate(ROOT/"data/patient_records.csv"))==500
 def test_missing_column():
+ 
  df=pd.read_csv(ROOT/"data/patient_records.csv").drop(columns=["Age"]); p=ROOT/"data/_test.csv"; df.to_csv(p,index=False)
  try:
   with pytest.raises(MissingColumnError,match="Age"): load_and_validate(p)

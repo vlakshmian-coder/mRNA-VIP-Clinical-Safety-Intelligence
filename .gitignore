@@ -179,3 +179,16 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# mRNA-VIP generated/runtime artifacts
+outputs/chroma_db/
+outputs/figures/
+outputs/reports/
+outputs/*.json
+outputs/*.npy
+outputs/*classification*
+outputs/*confusion*
+data/patient_records_clean.csv
+
+# Keep the trained runtime model in version control
+!outputs/risk_model.joblib
