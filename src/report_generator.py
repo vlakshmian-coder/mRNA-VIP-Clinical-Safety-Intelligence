@@ -5,7 +5,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 
-from .schemas import ClinicalSafetyReport
+try:
+    from .schemas import ClinicalSafetyReport
+except ImportError:
+    from schemas import ClinicalSafetyReport
 
 
 load_dotenv()
